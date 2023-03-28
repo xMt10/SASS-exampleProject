@@ -1,0 +1,116 @@
+@import 'navbar';
+@import 'colors';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+// Hero Section
+
+.hero {
+    background-color: $light;
+
+    &-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        margin: 0 auto;
+        height: 90vh;
+        width: 100%;
+        max-width: 1200px;
+        padding-right: 25px;
+        padding-left: 25px;
+        z-index: 1;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+            height: 100%;
+        }
+
+        &-left {
+            width: 100%;
+            line-height: 1.25;
+
+            @include tablet {
+                padding: 4.7rem 0;
+            }
+
+            @include mobile {
+                line-height: 1.55;
+            }
+
+            & h1 {
+                font-size: 4rem;
+                color: $lime;
+            }
+
+            & h2 {
+                font-size: 4rem;
+                color: $dark;
+            }
+
+            & p {
+                font-size: 2rem;
+                color: $dark;
+                margin-top: 1rem;
+                font-weight: 700;
+            }
+
+            &-btn {
+                font-size: 2rem;
+                background-color: $lime;
+                padding: 13px 31px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                margin-top: 2rem;
+                cursor: pointer;
+                position: relative;
+                transition: all .3s ease;
+
+
+                & a {
+                    position: relative;
+                    text-decoration: none;
+                    color: $light;
+                    z-index: 2;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background-color: $orangeRed;
+                    transition: all .3s;
+                    border-radius: 5px;
+                }
+
+                &:hover:after {
+                    width: 99%;
+                }
+
+            }
+
+
+
+        }
+
+        &-right {
+            text-align: center;
+        }
+
+        &-img {
+            height: 100%;
+            width: 100%;
+        }
+
+
+    }
+}

@@ -1,0 +1,83 @@
+@import 'colors';
+@import 'media-queries';
+
+%align-center {
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    background: $light;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem calc((100vw - 1200px) / 2);
+    z-index: 10;
+    position: relative;
+
+    &-logo {
+        color: $dark;
+        text-decoration: none;
+        font-size: 2rem;
+        @extend %align-center;
+        margin-left: 20px;
+        cursor: pointer;
+
+    }
+
+    &-bars {
+        opacity: 0;
+
+        @include tablet {
+            color: $dark;
+            opacity: 1;
+            font-size: 1.8rem;
+            position: absolute;
+            top: 25px;
+            right: 20px;
+        }
+
+    }
+
+    &-menu {
+        @extend %align-center;
+        text-align: center;
+        list-style: none;
+        margin-right: 25px;
+
+        @include tablet {
+            display: none;
+        }
+
+        &-links {
+            color: $dark;
+            @extend %align-center;
+            text-decoration: none;
+            justify-content: center;
+            padding: 0 1.2rem;
+
+            &:hover {
+                color: $lime;
+                transition: all .3s ease;
+            }
+        }
+
+        #button {
+            padding: 12px 24px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background: $lime;
+            color: $light;
+            margin-left: 17px;
+            transition: all .3s ease;
+
+            &:hover {
+                background: $orangeRed;
+                transition: all .3s ease;
+            }
+        }
+    }
+
+
+}
